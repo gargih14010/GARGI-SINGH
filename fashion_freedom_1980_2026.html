@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FASHION & FREEDOM: 1980–2026 | Editorial Archive</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Playfair Display (Luxury Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons for UI UI elements -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            onyx: '#0b0b0d',
+            charcoal: '#141419',
+            slateDark: '#1d1d26',
+            goldMuted: '#d4af37',
+            goldLight: '#f3e5ab',
+            editorialWhite: '#f8f8fa',
+            accentCrimson: '#9b111e'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'shimmer': 'shimmer 2.5s infinite linear',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Grain Overlay */
+    .film-grain {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+
+    /* Custom Glassmorphism */
+    .glass-panel {
+      background: rgba(20, 20, 25, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+    
+    .glass-panel-light {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0b0d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #333340;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-border-glow {
+      box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-onyx text-editorialWhite font-sans antialiased selection:bg-goldMuted selection:text-onyx relative overflow-x-hidden">
+
+  <!-- Ambient Glowing Backgrounds -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 bg-goldMuted/10 rounded-full blur-[140px] pointer-events-none animation-pulse-slow"></div>
+  <div class="fixed bottom-1/3 right-10 w-[30rem] h-[30rem] bg-amber-700/10 rounded-full blur-[160px] pointer-events-none"></div>
+  <div class="fixed top-2/3 left-10 w-80 h-80 bg-purple-900/10 rounded-full blur-[150px] pointer-events-none"></div>
+  
+  <!-- Texture Overlay -->
+  <div class="fixed inset-0 film-grain pointer-events-none z-50"></div>
+
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-40 glass-panel border-b border-white/10 transition-all duration-300 px-6 lg:px-12 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <span class="font-serif font-black text-2xl tracking-widest gold-gradient-text">VOGUE & AUTONOMY</span>
+        <span class="text-[10px] tracking-widest uppercase border border-goldMuted/30 px-2 py-0.5 rounded text-goldMuted">1980–2026</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-medium">
+        <a href="#eras" class="hover:text-goldMuted transition-colors text-white/80">Eras Archive</a>
+        <a href="#manifesto" class="hover:text-goldMuted transition-colors text-goldMuted flex items-center gap-1.5">
+          <i class="fa-solid fa-shield-halved text-[10px]"></i> Fashion & Freedom
+        </a>
+        <a href="#moodboard" class="hover:text-goldMuted transition-colors text-white/80">Interactive Gallery</a>
+        <a href="#action" class="hover:text-goldMuted transition-colors text-white/80">Manifesto Call</a>
+      </nav>
+
+      <!-- Quick Action Button -->
+      <a href="#manifesto" class="hidden sm:inline-block px-5 py-2 text-xs font-semibold uppercase tracking-widest border border-goldMuted/50 hover:bg-goldMuted hover:text-onyx transition-all duration-300 rounded-sm">
+        Read Manifesto
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen pt-32 pb-20 flex flex-col justify-center items-center px-6 overflow-hidden">
+    <!-- Subtle Background Vector Graphic Overlay -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+      <svg class="w-full h-full max-w-5xl" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="400" cy="400" r="350" stroke="#d4af37" stroke-width="1" stroke-dasharray="8 8"/>
+        <circle cx="400" cy="400" r="280" stroke="#ffffff" stroke-width="0.5"/>
+        <path d="M400 50 L400 750 M50 400 L750 400" stroke="#d4af37" stroke-width="0.5" stroke-dasharray="4 4"/>
+      </svg>
+    </div>
+
+    <div class="max-w-5xl mx-auto text-center z-10 space-y-8">
+      <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-goldMuted/30 bg-charcoal/80 backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-goldMuted animate-ping"></span>
+        <span class="text-xs uppercase tracking-[0.3em] text-goldLight font-semibold">High Fashion & Social Autonomy</span>
+      </div>
+
+      <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05]">
+        FASHION & <span class="gold-gradient-text italic font-normal">FREEDOM</span>
+        <span class="block text-2xl md:text-4xl font-light text-white/60 tracking-widest mt-2">1980 — 2026</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-base md:text-lg text-white/70 font-light leading-relaxed tracking-wide">
+        A visual archive tracing nearly five decades of transformative aesthetics, individual expression, and the unyielding principle of bodily autonomy.
+      </p>
+
+      <!-- Era Quick Jump Navigator Bar -->
+      <div class="pt-8">
+        <p class="text-xs uppercase tracking-[0.25em] text-goldMuted font-semibold mb-4">Jump to Era Timeline</p>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4 max-w-3xl mx-auto">
+          <button onclick="switchEra('1980s')" class="era-nav-btn px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded border border-white/20 hover:border-goldMuted hover:text-goldMuted transition-all bg-charcoal/60">1980s</button>
+          <button onclick="switchEra('1990s')" class="era-nav-btn px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded border border-white/20 hover:border-goldMuted hover:text-goldMuted transition-all bg-charcoal/60">1990s</button>
+          <button onclick="switchEra('2000s')" class="era-nav-btn px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded border border-white/20 hover:border-goldMuted hover:text-goldMuted transition-all bg-charcoal/60">2000s</button>
+          <button onclick="switchEra('2010s')" class="era-nav-btn px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded border border-white/20 hover:border-goldMuted hover:text-goldMuted transition-all bg-charcoal/60">2010s</button>
+          <button onclick="switchEra('2020s')" class="era-nav-btn px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded border border-goldMuted text-goldMuted bg-goldMuted/10 transition-all">2020s–2026</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+      <span class="text-[10px] uppercase tracking-widest text-white/70">Scroll To Explore</span>
+      <div class="w-5 h-9 rounded-full border border-white/30 flex justify-center pt-2">
+        <div class="w-1 h-2 bg-goldMuted rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ERA SHOWCASE SECTION -->
+  <section id="eras" class="py-24 px-6 max-w-7xl mx-auto relative z-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-white/10 pb-6 gap-4">
+      <div>
+        <span class="text-xs uppercase tracking-[0.3em] text-goldMuted font-bold block mb-2">Chronological Archive</span>
+        <h2 class="font-serif text-3xl md:text-5xl font-bold">The Evolution of Expression</h2>
+      </div>
+      <p class="text-xs md:text-sm text-white/60 max-w-md">
+        Select an era below to reveal the defining silhouettes, cultural movements, and high-fashion paradigms from 1980 to present day.
+      </p>
+    </div>
+
+    <!-- Interactive Era Selector Tabs -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-10">
+      <button onclick="switchEra('1980s')" id="tab-1980s" class="era-tab py-4 px-3 text-center border-b-2 border-transparent hover:border-goldMuted hover:bg-white/5 transition-all rounded-t">
+        <span class="block text-xl font-serif font-bold">1980s</span>
+        <span class="text-[10px] uppercase text-white/50 tracking-wider">Power & Neon</span>
+      </button>
+      <button onclick="switchEra('1990s')" id="tab-1990s" class="era-tab py-4 px-3 text-center border-b-2 border-transparent hover:border-goldMuted hover:bg-white/5 transition-all rounded-t">
+        <span class="block text-xl font-serif font-bold">1990s</span>
+        <span class="text-[10px] uppercase text-white/50 tracking-wider">Grunge & Minimalism</span>
+      </button>
+      <button onclick="switchEra('2000s')" id="tab-2000s" class="era-tab py-4 px-3 text-center border-b-2 border-transparent hover:border-goldMuted hover:bg-white/5 transition-all rounded-t">
+        <span class="block text-xl font-serif font-bold">2000s</span>
+        <span class="text-[10px] uppercase text-white/50 tracking-wider">Y2K & Futurism</span>
+      </button>
+      <button onclick="switchEra('2010s')" id="tab-2010s" class="era-tab py-4 px-3 text-center border-b-2 border-transparent hover:border-goldMuted hover:bg-white/5 transition-all rounded-t">
+        <span class="block text-xl font-serif font-bold">2010s</span>
+        <span class="text-[10px] uppercase text-white/50 tracking-wider">Athleisure & Digital</span>
+      </button>
+      <button onclick="switchEra('2020s')" id="tab-2020s" class="era-tab py-4 px-3 text-center border-b-2 border-goldMuted bg-goldMuted/10 transition-all rounded-t">
+        <span class="block text-xl font-serif font-bold text-goldMuted">2020s–2026</span>
+        <span class="text-[10px] uppercase text-goldMuted/80 tracking-wider">Bio-Tech & Fluidity</span>
+      </button>
+    </div>
+
+    <!-- Dynamic Display Container -->
+    <div id="era-display-container" class="glass-panel rounded-2xl p-6 md:p-10 gold-border-glow transition-all duration-500">
+      <!-- Dynamic content injected via JavaScript -->
+    </div>
+  </section>
+
+  <!-- EDITORIAL MANIFESTO SECTION: FASHION & FREEDOM -->
+  <section id="manifesto" class="py-24 px-6 relative z-10 bg-gradient-to-b from-onyx via-charcoal to-onyx border-y border-goldMuted/20 overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute -right-20 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none font-serif text-[280px] font-black text-white select-none leading-none">
+      LIBERTY
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <!-- Top Section Header -->
+      <div class="text-center space-y-4 mb-16">
+        <span class="inline-block px-4 py-1 text-xs uppercase font-bold tracking-[0.3em] bg-accentCrimson/20 text-red-400 border border-accentCrimson/40 rounded-full">
+          Editorial Statement & High-Fashion Autonomy
+        </span>
+        <h2 class="font-serif text-3xl md:text-6xl font-black tracking-tight text-editorialWhite">
+          CLOTHING IS EXPRESSION — <span class="gold-gradient-text">CRIME IS INTENT</span>
+        </h2>
+        <div class="w-24 h-1 bg-goldMuted mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Empowering Vector Illustration -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+          <div class="relative w-full max-w-sm aspect-[4/5] glass-panel rounded-2xl p-6 flex flex-col items-center justify-center overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-transparent z-10"></div>
+            
+            <!-- Custom Vector SVG Art: Joyful, Confident Woman in Open Space -->
+            <svg class="w-full h-auto max-h-80 z-0 transition-transform duration-700 group-hover:scale-105" viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Radiant Sun / Open Horizon Rays -->
+              <circle cx="150" cy="190" r="130" fill="url(#sun-glow)" opacity="0.15"/>
+              <path d="M150 20 L150 360 M20 190 L280 190 M50 90 L250 290 M50 290 L250 90" stroke="#d4af37" stroke-width="0.75" stroke-dasharray="3 3"/>
+              
+              <!-- Flowing Fabric / Ribbon of Freedom -->
+              <path d="M40 280 C90 220, 180 340, 260 220 C280 190, 270 140, 230 150 C180 160, 120 100, 70 160" stroke="#f3e5ab" stroke-width="3" fill="none" opacity="0.6"/>
+              
+              <!-- Stylized Woman Figure - Joyful stance, arms open -->
+              <!-- Head & Hair -->
+              <circle cx="150" cy="95" r="16" fill="#f3e5ab"/>
+              <path d="M142 82 C130 65, 175 60, 170 85 C185 80, 190 100, 170 110 C160 115, 140 105, 142 82 Z" fill="#d4af37"/>
+              <!-- Radiant Smiling Face Motif -->
+              <path d="M146 96 Q150 102 154 96" stroke="#0b0b0d" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="145" cy="92" r="1.5" fill="#0b0b0d"/>
+              <circle cx="155" cy="92" r="1.5" fill="#0b0b0d"/>
+              
+              <!-- Torso & Flowing Dress -->
+              <path d="M150 111 L140 150 L160 150 Z" fill="#f8f8fa"/>
+              <path d="M140 150 L100 290 Q150 320 200 290 L160 150 Z" fill="url(#dress-grad)"/>
+              
+              <!-- Open Joyful Arms -->
+              <path d="M142 120 C110 100, 80 80, 65 70" stroke="#f3e5ab" stroke-width="4" stroke-linecap="round"/>
+              <path d="M158 120 C190 100, 220 80, 235 70" stroke="#f3e5ab" stroke-width="4" stroke-linecap="round"/>
+              
+              <!-- Birds / Flying Symbols of Freedom -->
+              <path d="M70 50 Q75 42 80 50 Q85 42 90 50" stroke="#d4af37" stroke-width="2" fill="none"/>
+              <path d="M210 40 Q215 32 220 40 Q225 32 230 40" stroke="#d4af37" stroke-width="1.5" fill="none"/>
+
+              <!-- Gradients -->
+              <defs>
+                <radialGradient id="sun-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(150 190) scale(130)">
+                  <stop stop-color="#d4af37"/>
+                  <stop offset="1" stop-color="#0b0b0d" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="dress-grad" x1="150" y1="150" x2="150" y2="300" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#d4af37"/>
+                  <stop offset="1" stop-color="#9b111e"/>
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <div class="relative z-20 text-center mt-4">
+              <span class="font-serif italic text-lg text-goldLight block">Unapologetic Expression</span>
+              <span class="text-[10px] uppercase tracking-widest text-white/50">Free • Joyful • Fearless</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Sharp Editorial Manifesto Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="border-l-2 border-goldMuted pl-6 space-y-4">
+            <h3 class="font-serif text-2xl md:text-3xl font-bold text-goldLight">
+              The Fundamental Distinction
+            </h3>
+            <p class="text-white/90 text-base md:text-lg leading-relaxed font-light">
+              Fashion is a canvas of identity, creativity, and self-governance. Whether a woman chooses tailored oversized suits, sheer haute couture, athletic leisure, or high-concept streetwear—her wardrobe is a personal narrative, never a negotiation.
+            </p>
+          </div>
+
+          <!-- Bold Highlight Callout Card -->
+          <div class="glass-panel p-6 rounded-xl border border-goldMuted/30 bg-goldMuted/5 my-6 space-y-3">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-quote-left text-2xl text-goldMuted"></i>
+              <p class="font-serif text-lg md:text-xl font-bold text-white leading-snug">
+                RAPE AND SEXUAL ASSAULT ARE ROOTED EXCLUSIVELY IN CRIME AND INTENT — NEVER IN WHAT A WOMAN WEARS.
+              </p>
+            </div>
+            <p class="text-xs uppercase tracking-widest text-goldMuted/80 text-right font-semibold">
+              — Universal Truth of Autonomy
+            </p>
+          </div>
+
+          <div class="space-y-4 text-white/70 text-sm md:text-base leading-relaxed font-light">
+            <p>
+              For decades, harmful narratives attempted to link modesty to safety, shifting responsibility from perpetrators to victims. High fashion has consistently challenged these outdated fallacies by celebrating the body as sovereign, artful, and self-owned.
+            </p>
+            <p>
+              Safety is a fundamental human right guaranteed by law and respect—it is never dependent on hemlines, necklines, or aesthetics. True freedom in fashion means wearing whatever brings joy, power, and confidence in any open surrounding without fear or compromise.
+            </p>
+          </div>
+
+          <!-- Core Pillars Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+            <div class="glass-panel-light p-4 rounded-lg border border-white/5">
+              <i class="fa-solid fa-gem text-goldMuted mb-2 text-lg"></i>
+              <h4 class="font-bold text-xs uppercase tracking-wider text-white">Absolute Choice</h4>
+              <p class="text-xs text-white/50 mt-1">Clothing is an individual right of creative artistic freedom.</p>
+            </div>
+            <div class="glass-panel-light p-4 rounded-lg border border-white/5">
+              <i class="fa-solid fa-gavel text-goldMuted mb-2 text-lg"></i>
+              <h4 class="font-bold text-xs uppercase tracking-wider text-white">Zero Blame</h4>
+              <p class="text-xs text-white/50 mt-1">Responsibility rests solely on those who commit acts of violence.</p>
+            </div>
+            <div class="glass-panel-light p-4 rounded-lg border border-white/5">
+              <i class="fa-solid fa-sun text-goldMuted mb-2 text-lg"></i>
+              <h4 class="font-bold text-xs uppercase tracking-wider text-white">Unbounded Joy</h4>
+              <p class="text-xs text-white/50 mt-1">Stepping into open spaces with uncompromised happiness.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE MOODBOARD & QUOTE GALLERY SECTION -->
+  <section id="moodboard" class="py-24 px-6 max-w-7xl mx-auto relative z-10">
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <span class="text-xs uppercase tracking-[0.3em] text-goldMuted font-bold">Interactive Curation</span>
+      <h2 class="font-serif text-3xl md:text-5xl font-bold">Voices of Fashion & Freedom</h2>
+      <p class="text-white/60 text-sm">
+        Explore timeless quotes and aesthetic elements celebrating individual empowerment across eras. Filter by topic or interact to bookmark quotes.
+      </p>
+
+      <!-- Filter Controls -->
+      <div class="flex flex-wrap justify-center gap-2 pt-4">
+        <button onclick="filterQuotes('all')" class="quote-filter-btn px-4 py-1.5 text-xs font-semibold rounded-full border border-goldMuted text-goldMuted bg-goldMuted/10">All Themes</button>
+        <button onclick="filterQuotes('autonomy')" class="quote-filter-btn px-4 py-1.5 text-xs font-semibold rounded-full border border-white/20 hover:border-goldMuted text-white/70 transition-all">Autonomy & Power</button>
+        <button onclick="filterQuotes('expression')" class="quote-filter-btn px-4 py-1.5 text-xs font-semibold rounded-full border border-white/20 hover:border-goldMuted text-white/70 transition-all">Self-Expression</button>
+        <button onclick="filterQuotes('future')" class="quote-filter-btn px-4 py-1.5 text-xs font-semibold rounded-full border border-white/20 hover:border-goldMuted text-white/70 transition-all">Future & Innovation</button>
+      </div>
+    </div>
+
+    <!-- Quotes Grid -->
+    <div id="quotes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Injected dynamically via JavaScript -->
+    </div>
+  </section>
+
+  <!-- VISUAL CALL TO ACTION & FOOTER SECTION -->
+  <footer id="action" class="bg-charcoal border-t border-white/10 pt-20 pb-12 px-6 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+        
+        <!-- Brand Narrative Column -->
+        <div class="lg:col-span-6 space-y-6">
+          <span class="font-serif text-3xl font-black gold-gradient-text">FASHION & FREEDOM</span>
+          <p class="text-white/60 text-sm max-w-md font-light leading-relaxed">
+            An editorial showcase honoring 46 years of style history while championing bodily autonomy, dignity, and fearlessness in every corner of the world.
+          </p>
+          <div class="flex items-center space-x-4 text-goldMuted">
+            <a href="#" class="w-10 h-10 rounded-full border border-goldMuted/30 flex items-center justify-center hover:bg-goldMuted hover:text-onyx transition-all">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full border border-goldMuted/30 flex items-center justify-center hover:bg-goldMuted hover:text-onyx transition-all">
+              <i class="fa-brands fa-pinterest"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full border border-goldMuted/30 flex items-center justify-center hover:bg-goldMuted hover:text-onyx transition-all">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Newsletter Interactive Form -->
+        <div class="lg:col-span-6 glass-panel p-8 rounded-2xl space-y-4">
+          <h3 class="font-serif text-2xl font-bold text-white">Join the Freedom Editorial Circle</h3>
+          <p class="text-xs text-white/60">Receive monthly visual essays, high-fashion archives, and autonomy commentaries.</p>
+          
+          <form onsubmit="handleSubscribe(event)" class="space-y-3 pt-2">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input type="email" id="email-input" required placeholder="Enter your email address" class="bg-onyx/80 border border-white/20 rounded px-4 py-3 text-xs text-white placeholder-white/40 focus:outline-none focus:border-goldMuted flex-grow">
+              <button type="submit" class="px-6 py-3 bg-goldMuted text-onyx text-xs font-bold uppercase tracking-wider rounded hover:bg-goldLight transition-all">
+                Subscribe
+              </button>
+            </div>
+            <div id="sub-message" class="text-xs text-green-400 hidden">Thank you for joining our editorial collective.</div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Bottom Nav -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 gap-4">
+        <p>© 1980–2026 Fashion & Freedom Editorial. All Rights Reserved.</p>
+        <p class="flex items-center gap-2">
+          Designed with <i class="fa-solid fa-heart text-accentCrimson"></i> for High Fashion & Universal Autonomy
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC JAVASCRIPT LOGIC -->
+  <script>
+    // Era Data Store (1980 - 2026)
+    const eraData = {
+      '1980s': {
+        title: '1980s: Power Suits, Neon Pop & Glam Rock',
+        subtitle: 'The Era of Bold Silhouettes, Exuberance, and Financial Autonomy',
+        description: 'The 1980s heralded the era of the female power suit, characterized by structured shoulder pads, vivid neon accents, and metallic glamour. Women asserted dominance in boardrooms and club floors alike, utilizing fashion as an unapologetic armor of ambition.',
+        keyTrends: ['Power Blazers & Shoulder Pads', 'Neon & Metallic Textiles', 'Glam Rock & Leather', 'High-Cut Leotards', 'Oversized Statement Jewelry'],
+        palette: ['#ff007f', '#00e5ff', '#ffd700', '#111111', '#8a2be2'],
+        culturalImpact: 'Challenged traditional gender codes in professional spaces through bold, assertive tailoring and vibrant street expression.',
+        iconicLook: 'Structured double-breasted blazers paired with bold gold hardware and voluminous hairstyles.'
+      },
+      '1990s': {
+        title: '1990s: Grunge Minimalism & Supermodel Supremacy',
+        subtitle: 'Raw Authenticity, Slip Dresses, and the Genesis of Streetwear',
+        description: 'A decade of stark contrasts: from the effortless slip dresses championed by high-fashion supermodels to the anti-fashion grunge movement born in urban subcultures. Denim-on-denim became a universal canvas of cool self-assurance.',
+        keyTrends: ['Silk Slip Dresses', 'Flannel & Distressed Denim', 'Minimalist Monochrome', 'Chunky Lug-Sole Boots', 'Supermodel Glamour'],
+        palette: ['#2b2b2b', '#8b0000', '#4a5d4e', '#c0c0c0', '#f5f5dc'],
+        culturalImpact: 'Stripped away 80s excess in favor of raw authenticity, bodily sovereignty, and casual everyday luxury.',
+        iconicLook: 'Floor-length bias-cut silk slip dress paired with combat boots and minimal jewelry.'
+      },
+      '2000s': {
+        title: '2000s: Y2K Aesthetics & Pop Runway Futurism',
+        subtitle: 'Low-Rise Revolution, Metallic Textures, and Digital Dawn',
+        description: 'The turn of the millennium brought playful cyber-futurism, low-rise denim, velour tracksuits, and high-shine iridescent fabrics. Driven by pop icons, fashion became celebratory, expressive, and experimental.',
+        keyTrends: ['Low-Rise Denim & Cargo Pants', 'Iridescent & Metallic Fabrics', 'Velour & Rhinestone Accents', 'Frameless Sunglasses', 'Cyber-Futuristic Tops'],
+        palette: ['#ff69b4', '#00ffff', '#e5e4e2', '#7b68ee', '#fff0f5'],
+        culturalImpact: 'Celebrated playful body confidence and early internet optimism through hyper-expressive pop culture.',
+        iconicLook: 'Metallic crop tops paired with low-rise relaxed cargo trousers and rimless tinted eyewear.'
+      },
+      '2010s': {
+        title: '2010s: Athleisure Luxury & Digital Haute Couture',
+        subtitle: 'Normcore, Minimalist Chic, and the Social Media Runway',
+        description: 'The 2010s blurred the boundaries between athletic gear and high-fashion ateliers. Clean monochrome palettes, normcore utility, and digital-first fashion democratized runways across global platforms.',
+        keyTrends: ['High-Fashion Athleisure', 'Minimalist Monochrome', 'Oversized Streetwear Sneakers', 'Neutral Tonal Dressing', 'Clean Tailoring'],
+        palette: ['#d3d3d3', '#222222', '#c5a059', '#e8d8c8', '#3b3b4f'],
+        culturalImpact: 'Prioritized functional comfort without sacrificing sophistication, reflecting the fast-paced modern lifestyle.',
+        iconicLook: 'Tailored oversized camel coat worn over sleek monochrome athleisure and luxury sneakers.'
+      },
+      '2020s': {
+        title: '2020s–2026: Sustainable Bio-Tech & Gender-Fluid Tailoring',
+        subtitle: 'Hyper-Expressive Utility, Smart Fabrics, and Unrestricted Sovereignty',
+        description: 'The current era represents the zenith of conscious innovation. From lab-grown bio-textiles and AI-assisted custom tailoring to gender-fluid silhouettes, fashion in 2026 stands as an elevated manifest of eco-responsibility and absolute bodily freedom.',
+        keyTrends: ['Bio-Engineered & Regenerative Fabrics', 'Gender-Fluid Tailoring', 'Solar & Smart Integrated Apparel', 'Hyper-Utility Outerwear', 'Virtual/Augmented Accessories'],
+        palette: ['#d4af37', '#0f2a1d', '#1a1a24', '#e0e6ed', '#708090'],
+        culturalImpact: 'Establishes sustainable ethics and zero-compromise personal autonomy as the core tenets of modern luxury.',
+        iconicLook: 'Sculptural gender-fluid tailored blazer crafted from mycelium leather with responsive metallic threading.'
+      }
+    };
+
+    // Quotes Data Store
+    const quotesData = [
+      {
+        quote: "Fashion is the armor to survive the reality of everyday life. Wear what makes you feel invincible.",
+        author: "Bill Cunningham",
+        category: "expression",
+        era: "1980s"
+      },
+      {
+        quote: "Clothing is an expression of self, never an invitation or a justification. Crime is always the sole responsibility of the perpetrator.",
+        author: "High Fashion Autonomy Manifesto",
+        category: "autonomy",
+        era: "2020s"
+      },
+      {
+        quote: "I like to be free. Freedom is the greatest luxury anyone can afford.",
+        author: "Gianni Versace",
+        category: "expression",
+        era: "1990s"
+      },
+      {
+        quote: "Fashion in 2026 is not about fitting into a mold; it is about creating your own atmosphere of joy.",
+        author: "Contemporary Editorial",
+        category: "future",
+        era: "2020s"
+      },
+      {
+        quote: "A woman’s body belongs to her alone. What she wears is her art, her choice, and her freedom.",
+        author: "Editorial Voice",
+        category: "autonomy",
+        era: "2010s"
+      },
+      {
+        quote: "Style is a way to say who you are without having to speak.",
+        author: "Rachel Zoe",
+        category: "expression",
+        era: "2000s"
+      }
+    ];
+
+    // State
+    let activeEra = '2020s';
+
+    // Render Era Showcase Function
+    function switchEra(eraKey) {
+      activeEra = eraKey;
+      const data = eraData[eraKey];
+      const container = document.getElementById('era-display-container');
+
+      // Update Active Nav Buttons / Tabs UI
+      document.querySelectorAll('.era-tab').forEach(tab => {
+        tab.classList.remove('border-goldMuted', 'bg-goldMuted/10');
+        tab.classList.add('border-transparent');
+        const textSpan = tab.querySelector('span');
+        if (textSpan) textSpan.classList.remove('text-goldMuted');
+      });
+
+      const activeTab = document.getElementById(`tab-${eraKey}`);
+      if (activeTab) {
+        activeTab.classList.remove('border-transparent');
+        activeTab.classList.add('border-goldMuted', 'bg-goldMuted/10');
+        const textSpan = activeTab.querySelector('span');
+        if (textSpan) textSpan.classList.add('text-goldMuted');
+      }
+
+      // Inject HTML with smooth transition
+      container.style.opacity = '0';
+      
+      setTimeout(() => {
+        container.innerHTML = `
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Details Column -->
+            <div class="lg:col-span-7 space-y-6">
+              <div class="space-y-2">
+                <span class="text-xs font-bold uppercase tracking-[0.25em] text-goldMuted">${data.subtitle}</span>
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-white">${data.title}</h3>
+              </div>
+
+              <p class="text-white/80 text-sm md:text-base leading-relaxed font-light">
+                ${data.description}
+              </p>
+
+              <!-- Color Palette Swatches -->
+              <div class="space-y-2">
+                <span class="text-[10px] uppercase tracking-widest text-white/50 font-semibold block">Signature Era Color Palette</span>
+                <div class="flex items-center gap-3">
+                  ${data.palette.map(hex => `
+                    <div class="group relative flex flex-col items-center">
+                      <div class="w-8 h-8 rounded-full border border-white/20 transition-transform group-hover:scale-110 shadow-lg" style="background-color: ${hex}"></div>
+                      <span class="text-[9px] text-white/40 font-mono mt-1">${hex}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Key Trends Badges -->
+              <div class="space-y-2">
+                <span class="text-[10px] uppercase tracking-widest text-white/50 font-semibold block">Defining Silhouettes & Trends</span>
+                <div class="flex flex-wrap gap-2">
+                  ${data.keyTrends.map(trend => `
+                    <span class="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-white/90">
+                      <i class="fa-solid fa-sparkles text-[9px] text-goldMuted mr-1.5"></i>${trend}
+                    </span>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Cultural Impact Box -->
+              <div class="p-4 rounded-xl bg-onyx/60 border border-goldMuted/20 text-xs space-y-1">
+                <span class="font-bold text-goldLight uppercase tracking-wider block">Cultural Paradigm Shift:</span>
+                <p class="text-white/70 font-light">${data.culturalImpact}</p>
+              </div>
+            </div>
+
+            <!-- Visual Graphic / Conceptual Card -->
+            <div class="lg:col-span-5 flex justify-center">
+              <div class="w-full aspect-square rounded-2xl bg-gradient-to-br from-charcoal via-onyx to-slateDark border border-white/10 p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-goldMuted/10 rounded-full blur-2xl group-hover:bg-goldMuted/20 transition-all"></div>
+                
+                <div class="flex justify-between items-start z-10">
+                  <span class="font-serif text-5xl font-black text-white/10 group-hover:text-goldMuted/20 transition-colors">${eraKey}</span>
+                  <span class="text-[10px] uppercase tracking-widest border border-goldMuted/30 text-goldMuted px-2 py-1 rounded">Archive Spec</span>
+                </div>
+
+                <!-- Stylized Minimal Graphic Icon Motif for Era -->
+                <div class="my-auto text-center z-10 space-y-3">
+                  <div class="w-16 h-16 mx-auto rounded-full border border-goldMuted/40 flex items-center justify-center bg-goldMuted/10 text-goldMuted text-2xl group-hover:scale-110 transition-transform">
+                    <i class="fa-solid ${getEraIcon(eraKey)}"></i>
+                  </div>
+                  <p class="font-serif italic text-sm text-goldLight max-w-xs mx-auto">"${data.iconicLook}"</p>
+                </div>
+
+                <div class="z-10 text-right">
+                  <span class="text-[9px] uppercase tracking-widest text-white/40">Fashion & Sovereignty • ${eraKey}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        container.style.opacity = '1';
+      }, 250);
+    }
+
+    function getEraIcon(era) {
+      switch(era) {
+        case '1980s': return 'fa-crown';
+        case '1990s': return 'fa-gem';
+        case '2000s': return 'fa-bolt';
+        case '2010s': return 'fa-feather';
+        case '2020s': return 'fa-atom';
+        default: return 'fa-star';
+      }
+    }
+
+    // Render Quote Gallery
+    function renderQuotes(filter = 'all') {
+      const grid = document.getElementById('quotes-grid');
+      const filtered = filter === 'all' ? quotesData : quotesData.filter(q => q.category === filter);
+
+      grid.innerHTML = filtered.map((q, idx) => `
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between hover:border-goldMuted/50 transition-all duration-300 group">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center">
+              <i class="fa-solid fa-quote-left text-xl text-goldMuted/60"></i>
+              <span class="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded bg-white/5 text-white/60">${q.era}</span>
+            </div>
+            <p class="font-serif text-base text-white/90 italic leading-relaxed">
+              "${q.quote}"
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-white/10 mt-6 flex justify-between items-center">
+            <span class="text-xs font-semibold text-goldMuted">${q.author}</span>
+            <button onclick="bookmarkQuote(this)" class="text-white/40 hover:text-goldMuted transition-colors text-xs" title="Save Quote">
+              <i class="fa-regular fa-bookmark"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterQuotes(category) {
+      document.querySelectorAll('.quote-filter-btn').forEach(btn => {
+        btn.classList.remove('border-goldMuted', 'text-goldMuted', 'bg-goldMuted/10');
+        btn.classList.add('border-white/20', 'text-white/70');
+      });
+      event.target.classList.remove('border-white/20', 'text-white/70');
+      event.target.classList.add('border-goldMuted', 'text-goldMuted', 'bg-goldMuted/10');
+      renderQuotes(category);
+    }
+
+    function bookmarkQuote(btn) {
+      const icon = btn.querySelector('i');
+      if (icon.classList.contains('fa-regular')) {
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid', 'text-goldMuted');
+      } else {
+        icon.classList.remove('fa-solid', 'text-goldMuted');
+        icon.classList.add('fa-regular');
+      }
+    }
+
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const input = document.getElementById('email-input');
+      const msg = document.getElementById('sub-message');
+      if (input.value) {
+        msg.classList.remove('hidden');
+        input.value = '';
+        setTimeout(() => msg.classList.add('hidden'), 5000);
+      }
+    }
+
+    // Initialize Page Content on Load
+    window.onload = function() {
+      switchEra('2020s');
+      renderQuotes('all');
+    };
+  </script>
+</body>
+</html>
